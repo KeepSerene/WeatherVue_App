@@ -1,0 +1,117 @@
+/* Display none & block */
+.dis-none {
+  display: none;
+}
+
+.dis-block {
+  display: block;
+}
+
+/* A11y styles */
+.visually-hidden {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+
+  position: absolute;
+  left: -10000px;
+  top: auto;
+}
+
+.skip-link {
+  position: absolute;
+  top: -9999px;
+  left: 0;
+  z-index: 1;
+
+  background-color: var(--txt-shadow-clr);
+  color: var(--font-clr);
+  padding: 14px;
+}
+
+.skip-link:is(:focus-visible, :active) {
+  top: auto;
+  left: auto;
+}
+
+/* Button styles */
+.btn {
+  min-width: 48px;
+  min-height: 48px;
+  background-color: var(--btn-bg-clr);
+  color: var(--btn-txt-clr);
+  font-size: 1.25rem;
+  font-weight: 900;
+  border: 2px solid var(--border-clr);
+  border-radius: 80px;
+  outline: none;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn:is(:hover, :focus) {
+  border-color: var(--font-clr);
+  box-shadow: 4px 2px 5px 0 var(--txt-shadow-clr);
+}
+
+@media only screen and (width >= 768px) {
+  .btn {
+    min-width: 64px;
+    min-height: 64px;
+    font-size: 1.5rem;
+  }
+}
+
+/* Themes: background images */
+.cloudy {
+  background-color: var(--bg-clr);
+  background-image: url("../images/clouds.jpg");
+}
+
+.rainy {
+  background-color: var(--bg-clr);
+  background-image: url("../images/rain.jpg");
+}
+
+.snowy {
+  background-color: var(--bg-clr);
+  background-image: url("../images/snow.jpg");
+}
+
+.night {
+  background-color: var(--night-clr);
+  background-image: url("../images/night.jpg");
+}
+
+.foggy {
+  background-color: var(--fog-clr);
+  background-image: url("../images/fog.jpg");
+}
+
+/* Fade in & out animations */
+.vis-0 {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.fade-in {
+  visibility: visible;
+  opacity: 1;
+
+  animation-name: fadeIn;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-duration: 1500ms;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
