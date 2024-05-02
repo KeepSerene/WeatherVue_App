@@ -1,8 +1,11 @@
-const fetch = require("node-fetch");
+import fetch from "node-fetch";
+
+// const fetch = require("node-fetch");
 
 const { API_KEY } = process.env;
 
-exports.handler = async (event, context) => {
+export async function handler(event, context) {
+  // exports.handler = async (event, context) => {
   const params = JSON.parse(event.body);
   const { locInput, unit } = params;
 
@@ -26,4 +29,4 @@ exports.handler = async (event, context) => {
       body: err.stack,
     };
   }
-};
+}
