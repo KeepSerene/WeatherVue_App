@@ -8,7 +8,7 @@ export function setLocObj(locObj, coordsObj) {
   if (unit) locObj.setUnit(unit);
 }
 
-export const getHomeLoc = () => localStorage.getItem("defaultWeatherLoc");
+export const getHomeLoc = () => localStorage.getItem("defaultWeatherLocation");
 
 export function cleanInputStr(str) {
   const regex = / {2,}/g;
