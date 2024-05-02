@@ -1,11 +1,8 @@
-import fetch from "node-fetch";
-import { handler } from "./get_coords.cjs";
-// const fetch = require("node-fetch");
+const fetch = require("node-fetch");
 
 const { API_KEY } = process.env;
 
-export async function handler(event, context) {
-  // exports.handler = async (event, context) =>
+exports.handler = async (event, context) => {
   const params = JSON.parse(event.body);
   const { lat, lon, unit } = params;
   const url = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&units=${unit}&appid=${API_KEY}`;
@@ -24,4 +21,4 @@ export async function handler(event, context) {
       body: err.stack,
     };
   }
-}
+};

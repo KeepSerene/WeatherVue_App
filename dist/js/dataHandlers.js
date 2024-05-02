@@ -42,8 +42,8 @@ export async function fetchCoords(locStr, unit) {
       method: "POST",
       body: JSON.stringify(urlDataObj),
     });
-
     const jsonData = await dataStream.json();
+
     return jsonData;
   } catch (err) {
     console.error(err);
@@ -77,6 +77,7 @@ export async function fetchWeather(locObj) {
       body: JSON.stringify(urlDataObj),
     });
     const weatherJSON = await weatherStream.json();
+
     return weatherJSON;
   } catch (err) {
     console.error(err);
