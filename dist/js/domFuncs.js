@@ -378,6 +378,7 @@ function createDayWeatherIcon(icon, desc) {
   else img.src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
 
   img.alt = desc;
+  img.title = desc;
 
   return img;
 }
