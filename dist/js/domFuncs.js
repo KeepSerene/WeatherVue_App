@@ -78,7 +78,7 @@ export function updateAppDisplay(weahterInfo, locObj) {
   const weatherTheme = getWeatherTheme(weahterInfo.current.weather[0].icon);
   setBGImage(weatherTheme);
 
-  const srWeatherUpdates = buildSRWeatherUpdates(weahterInfo, locObj);
+  const srWeatherUpdates = getSRWeatherUpdates(weahterInfo, locObj);
   updateSRConfirmation(srWeatherUpdates);
 
   updateLocationHeader(locObj.getName());
@@ -158,7 +158,7 @@ function setBGImage(weatherTheme) {
   });
 }
 
-function buildSRWeatherUpdates(weahterInfo, locObj) {
+function getSRWeatherUpdates(weahterInfo, locObj) {
   const location = locObj.getName();
   const unit = locObj.getUnit();
   const tempUnit = unit === "imperial" ? "fahrenheit" : "celsius";

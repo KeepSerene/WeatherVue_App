@@ -7,4 +7,4 @@
 ### Note
 
 - Necessary details regarding the project will be added soon.
-- One can find the live site [here](/).
+- One can find the live site [here](https://climate-click.netlify.app/).
