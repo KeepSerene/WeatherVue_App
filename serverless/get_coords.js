@@ -1,10 +1,8 @@
-const fetch = require("node-fetch");
-
-const { API_KEY } = process.env;
-
 exports.handler = async (event, context) => {
+  const { default: fetch } = await import("node-fetch"); // Use dynamic import
   const params = JSON.parse(event.body);
   const { locInput, unit } = params;
+  const { API_KEY } = process.env;
 
   const regex = /^\d+$/g;
   const flag = regex.test(locInput) ? "zip" : "q";
